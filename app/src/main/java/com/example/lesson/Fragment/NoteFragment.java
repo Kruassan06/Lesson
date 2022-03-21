@@ -64,6 +64,5 @@ public class NoteFragment extends Fragment {
         return inflater.inflate(R.layout.activity_edit_note, container, false);
 
 
-
     }
 }

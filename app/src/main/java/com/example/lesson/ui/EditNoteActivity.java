@@ -21,8 +21,8 @@ public class EditNoteActivity extends AppCompatActivity implements View.OnClickL
     private EditText editTextAddText;
     private EditText editTextTitle;
     private Repo repo = InMemoryRepoImp.getInstance();
-    final String SAVED_EDITTEXTTITLE = "title";
-    final String SAVED_EDTTEXTDESRIPTION = "description";
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +36,6 @@ public class EditNoteActivity extends AppCompatActivity implements View.OnClickL
         editTextTitle.setText(note.getTitle());  // передается текст title в этот активити
 
 
-
         editTextAddText = findViewById(R.id.edittext_add_text);
         editTextAddText.setText(note.getDescription()); // передается текст description в этот активити
 
@@ -45,8 +44,8 @@ public class EditNoteActivity extends AppCompatActivity implements View.OnClickL
         buttEditSave.setOnClickListener(this);
 
     }
-    void saveNote()
-    {
+
+    void saveNote() {
         int noteId = note.getId();
         Note editNoteText = note;
         editNoteText.setTitle(editTextTitle.getText().toString());  // устанавливается изменный текст
@@ -62,14 +61,12 @@ public class EditNoteActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) { // method for button
-      switch (v.getId()){
-          case R.id.butt_edit_Save:
-              saveNote();
-              break;
+        switch (v.getId()) {
+            case R.id.butt_edit_Save:
+                saveNote();
+                break;
 
-      }
-
-
+        }
 
 
     }
