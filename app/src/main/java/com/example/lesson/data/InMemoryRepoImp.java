@@ -3,12 +3,11 @@ package com.example.lesson.data;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InMemoryRepoImp implements Repo{
+public class InMemoryRepoImp implements Repo {
     // Singleton
     private static InMemoryRepoImp repo;
 
-    private InMemoryRepoImp()
-    {
+    private InMemoryRepoImp() {
         init();
     }
 
@@ -28,8 +27,7 @@ public class InMemoryRepoImp implements Repo{
     }
 
     public static InMemoryRepoImp getInstance() {
-        if(repo == null)
-        {
+        if (repo == null) {
             repo = new InMemoryRepoImp();
         }
         return repo;
@@ -49,9 +47,8 @@ public class InMemoryRepoImp implements Repo{
 
     @Override
     public Note read(int id) {
-        for(int i = 0; i < notes.size(); i++)
-        {
-            if(notes.get(i).getId() == id)
+        for (int i = 0; i < notes.size(); i++) {
+            if (notes.get(i).getId() == id)
                 return notes.get(i);
         }
         return null;
@@ -59,9 +56,8 @@ public class InMemoryRepoImp implements Repo{
 
     @Override
     public void update(Note note) {
-        for(int i = 0; i < notes.size(); i++)
-        {
-            if(notes.get(i).getId() == note.getId()) {
+        for (int i = 0; i < notes.size(); i++) {
+            if (notes.get(i).getId() == note.getId()) {
                 notes.set(i, note);
                 break;
             }
@@ -70,9 +66,8 @@ public class InMemoryRepoImp implements Repo{
 
     @Override
     public void delete(int id) {
-        for(int i = 0; i < notes.size(); i++)
-        {
-            if(notes.get(i).getId() == id) {
+        for (int i = 0; i < notes.size(); i++) {
+            if (notes.get(i).getId() == id) {
                 notes.remove(i);
                 break;
             }

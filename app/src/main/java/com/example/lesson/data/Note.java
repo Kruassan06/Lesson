@@ -3,7 +3,7 @@ package com.example.lesson.data;
 import java.io.Serializable;
 
 public class Note implements Serializable {
-   public static final String NOTE = "NOTE";
+    public static final String NOTE = "NOTE";
 
     private Integer id;
     private String title;
